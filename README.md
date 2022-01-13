@@ -1,2 +1,2 @@
 # beauty-app
-Project 2
+Check out the live site here: https://protected-caverns-00008.herokuapp.com/
