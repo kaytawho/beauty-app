@@ -15,10 +15,6 @@ from controllers.session_controller import session_controller
 
 @app.route('/')
 def index():
-    conn = psycopg2.connect(DB_URL)
-    cur = conn.cursor()
-    cur.execute('SELECT 1', []) # Query to check that the DB connected
-    conn.close()
     return redirect('/listings')
 
 @app.route('/about')
