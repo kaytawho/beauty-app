@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<form method="post" action="/listingss">
+    <h2>Create a new listing!</h2>
+    <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" />
+    </div>
+
+    <div>
+        <label for="state">State</label>
+        <input id="state" name="state" type="state" />
+    </div>
+
+    <div>
+        <label for="suburb">State</label>
+        <input id="suburb" name="suburb" type="suburb" />
+    </div>
+
+    <div>
+        <label for="image_url">Image Url</label>
+        <input id="image_url" name="image_url" />
+    </div>
+
+    <div>
+        <label for="contact_url">Image Url</label>
+        <input id="contact_url" name="contact_url" />
+    </div>
+
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="description"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+{% endblock content %}

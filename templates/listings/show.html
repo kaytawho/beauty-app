@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="food-item">
+    <div class="info">
+        <h2>{{ food['name'] }}</h2>
+        <a href="/foods/{{ food['id'] }}">Show</a>
+        {% if session.get('user_id') %}
+        <a href="/foods/{{food['id']}}/edit">Edit</a>
+        {% endif %}
+    </div>
+    <img src="{{food['image_url']}}" alt="{{food['description']}}" />
+    <div class="price">${{'{:.2f}'.format(food["price"])}}</div>
+    <div class="description">{{food['description']}}</div>
+
+    {% endblock content %}
+</div>
