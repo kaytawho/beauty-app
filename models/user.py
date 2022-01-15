@@ -2,7 +2,6 @@ import database
 import bcrypt
 
 def insert_user(name, email, password):
-    # Decode the generated hash to convert it to a string to insert into DB
     password = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
     database.sql_write("INSERT INTO users (name, email, password)"
         + " VALUES(%s, %s, %s)", [name, email, password])

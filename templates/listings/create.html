@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<form method="post" action="/listingss">
+<form method="post" action="/listings">
     <h2>Create a new listing!</h2>
     <div>
         <label for="name">Name</label>
@@ -12,7 +12,7 @@
     </div>
 
     <div>
-        <label for="suburb">State</label>
+        <label for="suburb">Suburb</label>
         <input id="suburb" name="suburb" type="suburb" />
     </div>
 
@@ -22,8 +22,8 @@
     </div>
 
     <div>
-        <label for="contact_url">Image Url</label>
-        <input id="contact_url" name="contact_url" />
+        <label for="website">Website</label>
+        <input id="website" name="website" />
     </div>
 
     <div>

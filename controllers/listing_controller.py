@@ -25,7 +25,7 @@ def insert():
         request.form.get("state"),
         request.form.get("suburb"),
         request.form.get("image_url"),
-        request.form.get("contact_url"),
+        request.form.get("website"),
         request.form.get("description"),
     )
 
@@ -51,10 +51,10 @@ def update(id):
     state = request.form.get("state")
     suburb = request.form.get("suburb")
     image_url = request.form.get("image_url")
-    contact_url = request.form.get("contact_url")
+    website = request.form.get("website")
     description = request.form.get("description")
     # UPDATE
-    update_listing(name, state, suburb, image_url, contact_url, description)
+    update_listing(name, state, suburb, image_url, website, description)
     return redirect('/')
 
 @listing_controller.route('/listings/<id>/delete', methods=["POST"])
