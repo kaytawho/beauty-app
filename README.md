@@ -27,3 +27,5 @@ Check out the live site [here](https://protected-caverns-00008.herokuapp.com/)
 # ✍🏽 Mockups
 
 # 📋 Planning
+
+![Version 1 design](v1-design.jpeg)
