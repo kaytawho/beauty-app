@@ -2,6 +2,7 @@ html,
 body {
     font-size: 16px;
     background-color: bisque;
+    font-family: 'Roboto Mono', monospace;
 }
 
 * {
@@ -11,8 +12,9 @@ body {
 main,
 header,
 footer {
-    width: 60em;
-    margin: 2em auto;
+    width: 80em;
+    margin: 5em auto;
+    text-align: center;
 }
 
 a,
@@ -63,25 +65,26 @@ form .error {
     color: rgb(38, 28, 28);
 }
 
-.food-item {
+.listing-item {
     background-color: rgb(244, 244, 244);
+    border-radius: 25px;
     padding: 2em;
 }
 
-.food-item img {
+.listing-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border: 0.5em solid white;
 }
 
-.food-item .info {
+.listing-item .info {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.all-food {
+.all-listings {
     display: grid;
     gap: 2em;
     grid-template-columns: repeat(2, 1fr);

@@ -1,4 +1,4 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, render_template
 import os
 import psycopg2
 
@@ -20,6 +20,10 @@ def index():
     cur.execute('SELECT 1', []) # Query to check that the DB connected
     conn.close()
     return redirect('/listings')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 ## Controllers
 app.register_blueprint(listing_controller)

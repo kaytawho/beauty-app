@@ -14,8 +14,19 @@
         width="300"
         heigh="150"
     />
-    <div class="state">{{ listing['state']}}</div>
-    <div class="description">{{listing['description']}}</div>
+    <div class="state-suburb">
+        <h3>
+            {{listing['name']}} is located in {{listing['suburb']}}, {{
+            listing['state']}}
+        </h3>
+    </div>
+    <div class="description">
+        <h3>Visit them for:</h3>
+        <p>{{listing['description']}}</p>
+    </div>
+    <div class="website">
+        <a href="https://{{ listing['website']}}">Visit their website</a>
+    </div>
 
     {% endblock content %}
 </div>
