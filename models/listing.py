@@ -24,7 +24,7 @@ def get_all_listings():
     return results
 
 # UPDATE LISTINGS IN DB
-def update_listing(name, state, suburb, image_url, website, description):
+def update_listing(name, state, suburb, image_url, website, description, id):
     database.sql_write("UPDATE listings set name = %s, state = %s, suburb = %s, image_url = %s, website = %s, description = %s WHERE id = %s", [
         name,
         state,

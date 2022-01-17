@@ -85,6 +85,14 @@ form .error {
     gap: 10px;
 }
 
+.review-item {
+    background-color: rgb(244, 244, 244);
+    border-radius: 25px;
+    margin-top: 2em;
+    padding: 2em;
+    text-align: left;
+}
+
 .all-listings {
     display: grid;
     gap: 2em;

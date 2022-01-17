@@ -54,7 +54,7 @@ def update(id):
     website = request.form.get("website")
     description = request.form.get("description")
     # UPDATE
-    update_listing(name, state, suburb, image_url, website, description)
+    update_listing(name, state, suburb, image_url, website, description, id)
     return redirect('/')
 
 @listing_controller.route('/listings/<id>/delete', methods=["POST"])
