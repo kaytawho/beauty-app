@@ -17,9 +17,6 @@
                 <div>
                     <a href="/about">About</a>
                 </div>
-                <div>
-                    <a href="/listings">Listings</a>
-                </div>
                 {% if session.get('user_id') %}
                 <div>Welcome, {{session.get('user_name')}}</div>
                 <div>
@@ -38,23 +35,12 @@
         <main>{%block content %}{% endblock content %}</main>
         <footer>
             <section>
-                <h4>Aunty App</h4>
-                <p>Created by Kayta for General Assembly, 2022</p>
-            </section>
-
-            <section>
-                <h4>Some details</h4>
-                <ul>
-                    <li>Link</li>
-                    <li>More details</li>
-                    <li>Keeping this here</li>
-                    <li>Just in case</li>
-                </ul>
-            </section>
-            <section>
-                <h4>Contact details</h4>
-                1300 131 255<br />
-                hello@aunty.app
+                <p>
+                    Created by
+                    <a href="https://www.linkedin.com/in/kaytahackman/"
+                        >✨ Kayta ✨
+                    </a>
+                </p>
             </section>
         </footer>
     </body>

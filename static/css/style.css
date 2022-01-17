@@ -27,7 +27,7 @@ button {
 button {
     padding: 0.5em 1em;
     cursor: pointer;
-    background-color: rgb(186, 233, 158);
+    background-color: rgb(10, 91, 241);
     font-size: 1.4em;
 }
 
@@ -69,6 +69,7 @@ form .error {
     background-color: rgb(244, 244, 244);
     border-radius: 25px;
     padding: 2em;
+    align-content: center;
 }
 
 .listing-item img {
@@ -93,9 +94,10 @@ form .error {
 header nav {
     display: flex;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
 }
