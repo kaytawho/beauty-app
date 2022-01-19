@@ -27,19 +27,5 @@
         <a href="https://{{ listing['website']}}">Visit their website</a>
     </div>
 </div>
-<form method="post" action="/listings">
-    <div class="review-item">
-        <h2>{{ listing['name'] }} Reviews</h2>
-        <p>A test review is here</p>
-        <br />
-        <div class="review-input">
-            <label for="review-input">Share your review:</label><br />
-            <textarea id="review-input" name="review-input"></textarea>
-        </div>
-        <div>
-            <button type="submit">Submit review</button>
-        </div>
-    </div>
-</form>
 
 {% endblock content %}
