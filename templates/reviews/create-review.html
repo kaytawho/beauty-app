@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Review {{listing['name']}}:</h2>
+<form action="/listings/{{listing['id']}}/reviews" method="POST">
+    <div>
+        <label for="review">Review</label>
+        <textarea id="review" name="review" type="text">
+        Type your review here...</textarea
+        >
+    </div>
+
+    <div>
+        <label for="rating">Rating (out of five!)</label>
+        <input id="number" name="number" type="text" />
+    </div>
+
+    <div>
+        <button type="submit">Submit review</button>
+    </div>
+</form>
+{% endblock content %}

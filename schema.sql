@@ -26,18 +26,19 @@ INSERT INTO listings (user_id, "name",state,suburb,image_url,website,description
 create table reviews (
 id SERIAL NOT null PRIMARY KEY,
 review text,
-rating integer NOT NULL,
+rating numeric CHECK (rating > 0 and rating < 5) NOT NULL,
 listing_id INT,
-constraint fk_listing foreign KEY(listing_id) references listings(id) on delete CASCADE 
+user_id INT,
+constraint fk_listing foreign KEY(listing_id) references listings(id) on delete cascade, 
+constraint fk_user foreign KEY(user_id) references users(id) on delete CASCADE
 )
 
-
-INSERT INTO reviews (listing_id, "review", rating)
-	VALUES (7, 'Amazing place',5),
-	(2, 'My new local',5),
-	(2, 'Great service and always great for a chat',5),
-	(4, 'The best treatment I have ever had',5),
-	(7, 'Would go again',4),
-	(5,'Bit too busy on Saturdays',3),
-	(2, 'Better than other places around',4),
-	(5, 'I wouldnt go here again',1)
+INSERT INTO reviews ("review", rating, listing_id, user_id)
+	VALUES ('Amazing place',4, 9,6),
+	('My new local',5, 9,7),
+	('Great service and always great for a chat',5,9,8),
+	('The best treatment I have ever had',5,9,9),
+	('Would go again',4,9,10),
+	('Bit too busy on Saturdays',3,10,6),
+	('Better than other places around',4,11,7),
+	('I wouldnt go here again',1,11,8)

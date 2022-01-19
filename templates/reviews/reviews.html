@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Some test content reviews.html content here</h1>
+{% for review in reviews %}
+<div class="rating">State: {{ reviews['rating'] }}</div>
+<div class="review">{{ reviews['review'] }}</div>
+{% endfor %} {% endblock content %}
