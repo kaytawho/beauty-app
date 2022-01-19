@@ -21,12 +21,13 @@ def insert():
         return redirect('/login')
     # INSERT INTO DB
     insert_listing(
-        request.form.get("name"),
-        request.form.get("state"),
-        request.form.get("suburb"),
-        request.form.get("image_url"),
-        request.form.get("website"),
-        request.form.get("description"),
+        request.form.get('name'),
+        request.form.get('state'),
+        request.form.get('suburb'),
+        request.form.get('image_url'),
+        request.form.get('website'),
+        request.form.get('description'),
+        session.get('user_id'),
     )
 
     return redirect('/')

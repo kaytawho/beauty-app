@@ -2,25 +2,26 @@ import database
 
 
 # INSERT INTO DB
-def insert_listing(name, state, suburb, image_url, website, description):
-    database.sql_write("INSERT INTO listings(name, state, suburb, image_url, website, description) VALUES (%s, %s, %s, %s, %s, %s);", [
+def insert_listing(name, state, suburb, image_url, website, description, user_id):
+    database.sql_write("INSERT INTO listings(name, state, suburb, image_url, website, description, user_id) VALUES (%s, %s, %s, %s, %s, %s, %s);", [
         name,
         state,
         suburb,
         image_url,
         website,
         description,
+        user_id
     ])
 
 # SELECT LISTING FROM DB
 def get_listing(id):
-    results = database.sql_select("SELECT id, name, state, suburb, image_url, website, description FROM listings WHERE id = %s", [id])
+    results = database.sql_select("SELECT * FROM listings WHERE id = %s", [id])
     result = results[0]
     return result
 
 # SELECT ALL LISTINGS FROM DB
 def get_all_listings():
-    results = database.sql_select("SELECT id, name, state, suburb, image_url, website, description FROM listings", [])
+    results = database.sql_select("SELECT * FROM listings", [])
     return results
 
 # UPDATE LISTINGS IN DB
