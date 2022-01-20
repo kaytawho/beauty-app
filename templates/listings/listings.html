@@ -1,25 +1,18 @@
 {% extends 'base.html' %} {% block content %}
 
 <section class="home-intro">
-    <h1>The best beauty recommendations always come from Aunty.</h1>
+    <h1>The best beauty recommendations always come from Aunty 👵🏾</h1>
     <p>
         Community recommendations on the best in Australia's black beauty
         ecosystem.
     </p>
+    <a href="/listings/create">Add a new listing</a>
 </section>
-
-<a href="/listings/create">Add a new listing</a>
 
 <section class="all-listings">
     {% for listing in listing_items %}
     <div class="listing-item">
-        <div class="info">
-            <h2>{{ listing['name'] }}</h2>
-            <a href="/listings/{{listing['id']}}">View</a>
-            {% if session.get('user_id') %}
-            <a href="/listings/{{listing['id']}}/edit">Edit</a>
-            {% endif %}
-        </div>
+        <h2>{{ listing['name'] }}</h2>
         <img
             src="{{listing['image_url']}}"
             alt="{{listing['description']}}"
@@ -28,6 +21,12 @@
         />
         <div class="state">State: {{ listing['state']}}</div>
         <div class="description">{{listing['description']}}</div>
+        <div class="info">
+            <a href="/listings/{{listing['id']}}">View</a>
+            {% if session.get('user_id') %}
+            <a href="/listings/{{listing['id']}}/edit">Edit</a>
+            {% endif %}
+        </div>
     </div>
     {% endfor %}
 </section>

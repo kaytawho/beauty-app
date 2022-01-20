@@ -1,7 +1,7 @@
 html,
 body {
     font-size: 16px;
-    background-color: bisque;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -65,9 +65,14 @@ form .error {
     color: rgb(38, 28, 28);
 }
 
+.home-intro {
+    padding-bottom: 2em;
+}
+
 .listing-item {
-    background-color: rgb(244, 244, 244);
+    background-color: rgb(218, 214, 214);
     border-radius: 25px;
+    box-shadow: 12px 2px 1px black;
     padding: 2em;
     align-content: center;
 }
@@ -76,19 +81,44 @@ form .error {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 25px;
     border: 0.5em solid white;
 }
 
 .listing-item .info {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.show-listing-item {
+    display: grid;
+    background-color: rgb(67, 119, 214);
+    border-radius: 25px;
+    padding: 2em;
+    align-content: center;
+}
+
+.show-listing-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 0.5em solid white;
+}
+
+.show-listing-item .info {
+    display: flex;
+    align-items: center;
+    justify-content: left;
     gap: 10px;
 }
 
 .review-item {
     background-color: rgb(244, 244, 244);
     border-radius: 25px;
-    margin-top: 2em;
+    margin: 1em;
     padding: 2em;
     text-align: left;
 }
@@ -103,7 +133,7 @@ header nav {
     display: flex;
     gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 footer {

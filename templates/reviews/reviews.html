@@ -1,7 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Some test content reviews.html content here</h1>
+<h1>Read the latest reviews for {{ listing['name'] }}!</h1>
 {% for review in review_items %}
-<div class="rating">{{ review['rating'] }}</div>
-<div class="review">{{ review['review'] }}</div>
+<div class="review-item">
+    <div class="rating">
+        <h3>{{ review['rating'] }} out of 5</h3>
+    </div>
+    <div class="review">"{{ review['review'] }}"</div>
+</div>
 {% endfor %} {% endblock content %}
