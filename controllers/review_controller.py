@@ -24,7 +24,7 @@ def insert(listingId):
     # INSERT INTO DB
     insert_review(
         request.form.get('review'),
-        request.form.get('rating'),
+        request.form.get('rating', type=int),
         listingId,
         session.get('user_id')
     )
