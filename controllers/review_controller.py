@@ -31,7 +31,7 @@ def insert(listingId):
         session.get('user_id')
     )
 
-    return redirect(f'/listings/{listingId}/reviews', listing=listing)
+    return redirect(f'/listings/{listingId}/reviews')
 
 
 ##CODE BELOW NEEDS ATTENTION
