@@ -12,7 +12,7 @@
 <section class="all-listings">
     {% for listing in listing_items %}
     <div class="listing-item">
-        <h2>{{ listing['name'] }}</h2>
+        <h1>{{ listing['name'] }}</h1>
         <img
             src="{{listing['image_url']}}"
             alt="{{listing['description']}}"
@@ -23,7 +23,7 @@
         <div class="description">{{listing['description']}}</div>
         <div class="info">
             <a href="/listings/{{listing['id']}}">View</a>
-            {% if session.get('user_id') %}
+            {% if session.get('user_id') == listing['user_id']%}
             <a href="/listings/{{listing['id']}}/edit">Edit</a>
             {% endif %}
         </div>

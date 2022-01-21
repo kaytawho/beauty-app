@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% if session.get('user_id') == listing['user_id'] %}
 <form method="post" action="/listings/{{ listing['id'] }}">
     <h2>Edit listing</h2>
     <div>
@@ -18,7 +19,7 @@
     </div>
     
     <div>
-        <label for="image_url">Image Url</label>
+        <label for="image_url">Image URL</label>
         <input id="image_url" name="image_url" value="{{listing['image_url']}}"></textarea>
     </div>
 
@@ -37,12 +38,13 @@
     </div>
 </form>
 
-{% if session.get('user_id') == listing['user_id'] %}
     <form action="/listings/{{listing['id']}}/delete" method="POST">
         <button type="submit">
             Delete
         </button>
     </form>
+{% else %}
+<h2> Oops! You can't edit this page as you're not the original creator of this listing.</h2>
 {% endif %}
 
 {% endblock content %}
