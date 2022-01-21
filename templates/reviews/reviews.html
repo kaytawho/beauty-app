@@ -1,6 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1>Read the latest reviews for {{ listing['name'] }}!</h1>
+<div class="add-review">
+    <a href="/listings/{{listing['id']}}/reviews/create">Add your own review</a>
+</div>
 {% for review in review_items %}
 <div class="review-item">
     <div class="rating">

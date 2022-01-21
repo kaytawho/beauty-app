@@ -32,36 +32,3 @@ def insert(listingId):
     )
 
     return redirect(f'/listings/{listingId}/reviews')
-
-
-##CODE BELOW NEEDS ATTENTION
-
-# @review_controller.route('/listings/<listingId>/reviews')
-# def show(listingId):
-#     reviews = get_reviews(listingId)
-#     return render_template('show-review.html', reviews=reviews)
-
-# @review_controller.route('/listings/<listingId>/reviews/<reviewId>')
-# def edit(listingId, reviewId):
-#     if not session.get('user_id'):
-#         return redirect('/login')
-#     review = get_reviews(listingId)
-#     return render_template('edit-review.html', review=review)
-
-# @review_controller.route('/listings/<listingId>/reviews/<reviewId>', methods=["POST"])
-# def update(listingId, reviewId):
-#     if not session.get('user_id'):
-#         return redirect('/login')
-#     review = request.form.get('review'),
-#     rating = request.form.get('rating'),
-#     session.get('user_id'),
-#     # UPDATE
-#     update_review(review, rating, id)
-#     return redirect('/')
-
-# @review_controller.route('/listings/<listingId>/reviews/<reviewId>/delete', methods=["POST"])
-# def delete(reviewId):
-#     if not session.get('user_id'):
-#         return redirect('/login')
-#     delete_review(reviewId)
-#     return redirect('/')
