@@ -30,3 +30,6 @@ Check out the live site [here](https://protected-caverns-00008.herokuapp.com/)
 # 📋 Planning
 
 ![Version 3 design](v3-design.jpg)
+
+# 💡 Next steps
+- I ran out of time to implement edit/delete functionality to user reviews before the deadline, so this will be my next task!
