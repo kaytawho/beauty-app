@@ -17,11 +17,13 @@ create table listings (
     constraint fk_user foreign KEY(user_id) references users(id) on delete CASCADE 
 )
 
-INSERT INTO listings (user_id, "name",state,suburb,image_url,website,description)
-	VALUES (2, 'Beauty Test 2','VIC','Meadow','https://images.pexels.com/photos/897270/pexels-photo-897270.jpeg?cs=srgb&dl=pexels-m%C3%ADdia-897270.jpg&fm=jpg','www.google.com','Hair stuff'), 
-	(3, 'Beauty Test 3','TAS','Townland','https://images.pexels.com/photos/897270/pexels-photo-897270.jpeg?cs=srgb&dl=pexels-m%C3%ADdia-897270.jpg&fm=jpg','www.google.com','Makeup things'),
-	(4, 'Beauty Test 4','NSW','Cityville','https://images.pexels.com/photos/897270/pexels-photo-897270.jpeg?cs=srgb&dl=pexels-m%C3%ADdia-897270.jpg&fm=jpg','www.google.com','Product shop'),
-	(5, 'Beauty Test 5','QLD','Suburbia','https://images.pexels.com/photos/897270/pexels-photo-897270.jpeg?cs=srgb&dl=pexels-m%C3%ADdia-897270.jpg&fm=jpg','www.google.com','Massage therapy')
+INSERT INTO listings ("name",state,suburb,image_url,website,description,user_id)
+	VALUES ('Natural Living by Tamu','VIC','Meadow','https://images.pexels.com/photos/7218974/pexels-photo-7218974.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940g','www.google.com','Natural, organic therapies for the heart, mind and soul.', 6), 
+	('Braidz','TAS','Townland','https://images.pexels.com/photos/7275399/pexels-photo-7275399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500','www.google.com','Qualified hairdresser specialising in braiding for multitextured hair.', 7),
+	('Self Care Salon','NSW','Cityville','https://images.pexels.com/photos/6945660/pexels-photo-6945660.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500','www.google.com','Esthetician with over 30 years of experience. Specialising in treatments for those with melanin.', 8),
+	('Akwaaba','QLD','Suburbia','https://images.pexels.com/photos/897270/pexels-photo-897270.jpeg?cs=srgb&dl=pexels-m%C3%ADdia-897270.jpg&fm=jpg','www.google.com','Massage therapy, naturopathy and so much more', 9),
+    ('Allure Studio','NSW','Sydney','https://images.pexels.com/photos/4027606/pexels-photo-4027606.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500','www.google.com','Specialists in afro hair', 6),
+    ('Community Collective','VIC','Footscray','https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500','www.google.com','Skin treatments, massage, yoga and pilates', 6);
 
 create table reviews (
 id SERIAL NOT null PRIMARY KEY,
