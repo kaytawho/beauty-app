@@ -7,6 +7,8 @@ review_controller = Blueprint("review_controller", __name__, template_folder="..
 
 @review_controller.route('/listings/<listingId>/reviews')
 def reviews(listingId):
+    if not session.get('user_id'):
+        return redirect('/login')
     review_items = get_reviews(listingId)
     listing = get_listing(listingId)
     return render_template('reviews.html', review_items=review_items, listing=listing)
