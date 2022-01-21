@@ -1,6 +1,7 @@
 # beauty-app
 
 # What is it?
+You know how all of the best little-known, trusted-by-everyone, almost-magic beauty recommendations come from your aunty? Well, I created a CRUD app where users could share the best beauty businesses in Australia for black women. It's called Aunty.
 
 # 👀 Wanna look?
 
@@ -28,4 +29,7 @@ Check out the live site [here](https://protected-caverns-00008.herokuapp.com/)
 
 # 📋 Planning
 
-![Version 1 design](v2-design.jpg)
+![Version 3 design](v3-design.jpg)
+
+# 💡 Next steps
+- I ran out of time to implement edit/delete functionality to user reviews before the deadline, so this will be my next task!
