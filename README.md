@@ -1,8 +1,6 @@
-# beauty-app
-
 # What is it?
 
-You know how all of the best little-known, trusted-by-everyone, almost-magic beauty recommendations come from your aunty? Well, I created a CRUD app where users can list and review the best beauty businesses in Australia for black women. It's called Aunty.
+You know how all of the best little-known, trusted-by-everyone, almost-magic beauty recommendations come from your aunty? This CRUD allows users to sign up, list and review the best beauty businesses in Australia for black women. It's called Aunty.
 
 # 👀 Wanna look?
 
