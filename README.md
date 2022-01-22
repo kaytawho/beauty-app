@@ -37,5 +37,5 @@ Check out the live site [here](https://protected-caverns-00008.herokuapp.com/)
 
 # 💡 Next steps
 
--   I ran out of time to implement edit/delete functionality to user reviews, so this will be my next task!
--   My preference would also be to have most content gated behind a homepage login/signup, this will be addressed in the next iteration.
+-   As my next task, I'm planning on implementing edit/delete functionality to user reviews
+-   My preference would also be to have most content gated behind a homepage login/signup, this will also be addressed in the next iteration
