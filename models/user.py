@@ -6,8 +6,6 @@ def insert_user(name, email, password):
     database.sql_write("INSERT INTO users (name, email, password)"
         + " VALUES(%s, %s, %s)", [name, email, password])
 
-def get_user(id):
-    pass
 
 def get_user_by_email(email):
     results = database.sql_select("SELECT * FROM users WHERE email = %s", [email])
@@ -16,11 +14,3 @@ def get_user_by_email(email):
     else:
         return None
 
-def get_all_users():
-    pass
-
-def update_user(id, name, email):
-    pass
-
-def delete_user(id):
-    pass

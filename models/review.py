@@ -19,14 +19,3 @@ def get_reviews(listing_id):
 def get_all_reviews():
     results = database.sql_select("SELECT * FROM reviews", [])
     return results
-
-# UPDATE REVIEW IN DB
-def update_review(review, rating):
-    database.sql_write("UPDATE reviews set review = %s, rating = %s WHERE id = %s", [
-        review,
-        rating
-    ])
-
-# DELETE REVIEW FROM DB
-def delete_review(id):
-    database.sql_write("DELETE FROM reviews WHERE id = %s", [id])

@@ -1,6 +1,6 @@
 from flask import Blueprint, request, session, redirect, render_template
 from controllers.listing_controller import listings
-from models.review import delete_review, get_all_reviews, get_reviews, insert_review, update_review
+from models.review import get_all_reviews, get_reviews, insert_review
 from models.listing import get_listing
 
 review_controller = Blueprint("review_controller", __name__, template_folder="../templates/reviews")
