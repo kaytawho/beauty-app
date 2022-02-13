@@ -5,9 +5,7 @@ listing_controller = Blueprint("listing_controller", __name__, template_folder="
 
 @listing_controller.route('/listings')
 def listings():
-    listing_items = get_all_listings()
-
-    return render_template('listings.html', listing_items=listing_items)
+    return render_template('listings.html', listing_items = get_all_listings())
 
 @listing_controller.route('/listings/create')
 def create():
@@ -19,7 +17,7 @@ def create():
 def insert():
     if not session.get('user_id'):
         return redirect('/login')
-    # INSERT INTO DB
+
     insert_listing(
         request.form.get('name'),
         request.form.get('state'),
@@ -34,8 +32,7 @@ def insert():
 
 @listing_controller.route('/listings/<id>')
 def show(id):
-    listing = get_listing(id)
-    return render_template('show.html', listing=listing)
+    return render_template('show.html', listing = get_listing(id))
 
 @listing_controller.route('/listings/<id>/edit')
 def edit(id):
@@ -46,21 +43,24 @@ def edit(id):
 
 @listing_controller.route('/listings/<id>', methods=["POST"])
 def update(id):
-    if not session.get('user_id'):
+    listing = get_listing(id)
+    if not session.get('user_id') or not listing or listing["user_id"] != session.get('user_id'):
         return redirect('/login')
+
     name = request.form.get("name")
     state = request.form.get("state")
     suburb = request.form.get("suburb")
     image_url = request.form.get("image_url")
     website = request.form.get("website")
     description = request.form.get("description")
-    # UPDATE
+
     update_listing(name, state, suburb, image_url, website, description, id)
     return redirect('/')
 
 @listing_controller.route('/listings/<id>/delete', methods=["POST"])
 def delete(id):
-    if not session.get('user_id'):
+    listing = get_listing(id)
+    if not session.get('user_id') or not listing or listing["user_id"] != session.get('user_id'):
         return redirect('/login')
     delete_listing(id)
     return redirect('/')

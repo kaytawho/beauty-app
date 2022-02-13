@@ -1,20 +1,20 @@
 create table users (
-    id SERIAL NOT null primary key,
-    name VARCHAR(100) not null,
-    email TEXT not null unique,
-    password VARCHAR(255) not null
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
 );
 
 create table listings (
-    id SERIAL NOT null primary key,
-    name VARCHAR(100) not null unique,
-    state state,
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    state STATE,
     suburb TEXT,
     image_url TEXT,
     website TEXT,
-    description text,
+    description TEXT,
     user_id INT,
-    constraint fk_user foreign KEY(user_id) references users(id) on delete CASCADE 
+    CONSTRAINT fk_listings_user_id foreign KEY(user_id) references users(id) on delete CASCADE 
 )
 
 INSERT INTO listings ("name",state,suburb,image_url,website,description,user_id)
@@ -26,13 +26,13 @@ INSERT INTO listings ("name",state,suburb,image_url,website,description,user_id)
     ('Community Collective','VIC','Footscray','https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500','www.google.com','Skin treatments, massage, yoga and pilates', 6);
 
 create table reviews (
-id SERIAL NOT null PRIMARY KEY,
-review text,
-rating numeric CHECK (rating > 0 and rating < 5) NOT NULL,
-listing_id INT,
-user_id INT,
-constraint fk_listing foreign KEY(listing_id) references listings(id) on delete cascade, 
-constraint fk_user foreign KEY(user_id) references users(id) on delete CASCADE
+    id SERIAL PRIMARY KEY,
+    review TEXT,
+    rating NUMERIC CHECK (rating > 0 and rating < 5) NOT NULL,
+    listing_id INT,
+    user_id INT,
+    CONSTRAINT fk_listing FOREIGN KEY(listing_id) REFERENCES listings(id) ON DELETE CASCADE, 
+    CONSTRAINT fk_user FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 )
 
 INSERT INTO reviews ("review", rating, listing_id, user_id)

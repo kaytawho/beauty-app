@@ -24,8 +24,7 @@ def create(listingId):
 def insert(listingId):
     if not session.get('user_id'):
         return redirect('/login')
-    listing = get_listing(listingId)
-    # INSERT INTO DB
+            
     insert_review(
         request.form.get('review'),
         request.form.get('rating', type=int),
